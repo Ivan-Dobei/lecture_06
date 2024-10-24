@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Drawer, List, ListItem, ListItemText } from '@mui/material';
 
 
 function Navbar() {
@@ -14,7 +14,7 @@ function Navbar() {
         <Drawer
             variant="permanent"
             anchor="left"
-            sx={{ width: 240, position: 'fixed', top: '60px'}}
+            sx={{ width: 500, position: 'fixed', top: '60px'}}
         >
             <List>
                 {navBarItems.map((item, index) => (

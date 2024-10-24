@@ -5,16 +5,19 @@ import MainPage from "./layouts/MainPage/MainPage";
 import HomePage from "./layouts/HomePage/HomePage";
 import AboutPage from "./layouts/AboutPage/AboutPage";
 import NavBar from "./components/NavBar/NavBar";
+import {Drawer} from "@mui/material";
+import HeroPage from "./layouts/HeroPage/HeroPage";
 
 function App() {
 
     return (
-        <div className="main_div">
+        <div>
             <NavBar/>
             <Routes>
                 <Route path={'/heroes'} element={<HomePage/>}/>
                 <Route path={'/'} element={<MainPage/>}/>
                 <Route path={'/about'} element={<AboutPage/>}/>
+                <Route path={'/heroes/:id'} element={<HeroPage/>}/>
             </Routes>
         </div>
     );

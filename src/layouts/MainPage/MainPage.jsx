@@ -2,43 +2,26 @@ import React, {useEffect, useState} from 'react';
 import Loading from "../../components/Loading/Loading";
 import CharacterList from "../../components/CharacterList/CharacterList";
 import Pagination from "../../components/Pagination/Pagination";
+import useCharacters from "../../hooks/useCharacters/useCharacters";
+import {useNavigate} from "react-router-dom";
 
 function MainPage() {
 
-    const [characters, setCharacters] = useState([]);
-    const [info, setInfo] = useState({});
-    const [url, setUrl] = useState('https://rickandmortyapi.com/api/character');
-    const [isLoading, setIsLoading] = useState(false);
+    const { characters, info, isLoading, setUrl } = useCharacters();
+    const navigate = useNavigate();
 
-    async function fetchCharacters(url) {
-        setIsLoading(true);
-        try {
-            const response = await fetch(url);
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            setInfo(data.info);
-            setCharacters(data.results);
-
-        } catch (error) {
-            console.error('Fetch error:', error);
-        } finally {
-            setIsLoading(false);
-        }
+    const heroItemHandler = (id) => {
+        navigate(`heroes/${id}`);
     }
-
-    useEffect(() => {
-        fetchCharacters(url);
-    }, [url])
 
     return (
         <div>
             <section className="container main_section">
                 {isLoading && <Loading/>}
-                <CharacterList characterList={characters}/>
+                <CharacterList
+                    characterList={characters}
+                    setCharacterId={heroItemHandler}
+                />
             </section>
             <Pagination info={info} setUrl={setUrl}/>
         </div>

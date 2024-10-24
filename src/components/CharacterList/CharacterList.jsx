@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './characterList.css';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 
-function CharacterList({characterList}) {
+function CharacterList({characterList, setCharacterId}) {
 
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
@@ -21,9 +21,14 @@ function CharacterList({characterList}) {
         },
     ]
 
+    const handleRowClick = (item) => {
+        setCharacterId(item.id);
+    }
+
     return (
-        <Box sx={{ height: '90vh', width: '100%', marginLeft: '150px'}}>
+        <Box sx={{ height: '90vh', width: '80%', marginLeft: '20%'}}>
             <DataGrid
+                onRowClick={handleRowClick}
                 rows={characterList}
                 columns={columns}
                 initialState={{
@@ -33,8 +38,6 @@ function CharacterList({characterList}) {
                         },
                     },
                 }}
-                pageSizeOptions={[5]}
-                checkboxSelection
                 disableRowSelectionOnClick
             />
         </Box>
