@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 import {Route, Routes} from "react-router-dom";
 import MainPage from "./layouts/MainPage/MainPage";
 import HomePage from "./layouts/HomePage/HomePage";
@@ -11,7 +10,7 @@ import Box from "@mui/material/Box";
 function App() {
 
     return (
-        <div>
+        <Box>
             <NavBar/>
             <Box sx={{ height: '90vh', width: '80%', marginLeft: '20%'}}>
                 <Routes>
@@ -21,7 +20,7 @@ function App() {
                     <Route path={'/heroes/:id'} element={<HeroPage/>}/>
                 </Routes>
             </Box>
-        </div>
+        </Box>
     );
 }
 

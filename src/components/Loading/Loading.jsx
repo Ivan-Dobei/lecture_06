@@ -1,9 +1,11 @@
 import React from 'react';
-import './loading.css';
+import {Typography} from "@mui/material";
 
 function Loading() {
     return (
-        <h3 className="loading_text text">Loading...</h3>
+        <Typography sx={{width: '100%', fontSize: '32px', textAlign: 'center'}}>
+            Loading...
+        </Typography>
     );
 }
 

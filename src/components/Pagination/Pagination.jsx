@@ -2,6 +2,7 @@ import React from 'react';
 import './pagination.css';
 import {getPageNumberFromUrl} from "../../utils/getNumberFromUrl";
 import {Button, Typography} from "@mui/material";
+import Box from "@mui/material/Box";
 
 function Pagination({info, setUrl}) {
 
@@ -18,14 +19,14 @@ function Pagination({info, setUrl}) {
     }
 
     return (
-        <footer className="buttons">
+        <Box display='flex' alignItems="center" justifyContent='center' sx={{width: '100%'}}>
             <Button
                 variant="contained"
                 disabled={!info.prev}
                 className={prevBtnStyles}
                 onClick={prevBtnHandler}
             >Previous</Button>
-            <Typography className="count_of_pages text" variant="body2">
+            <Typography className="count_of_pages text" variant="body2" sx={{marginRight: '10px'}}>
                 Pages: {pageNumber}
             </Typography>
             <Button
@@ -34,7 +35,7 @@ function Pagination({info, setUrl}) {
                 onClick={nextBtnHandler}
                 className={nextBtnStyles}
             >Next</Button>
-        </footer>
+        </Box>
     );
 }
 

@@ -32,13 +32,20 @@ function Navbar() {
                         component={Link}
                         to={item.path}
                     >
-                        <ListItemText primary={item.text} />
+                        <ListItemText>
+                            <Typography color={'text.secondary'}>
+                                {item.text}
+                            </Typography>
+                        </ListItemText>
                     </ListItem>
                 ))}
                 <ListItem  sx={{textAlign: 'center'}}>
-                    <ListItemText>Dark mode: </ListItemText>
-                    <Switch checked={isDarkTheme} onChange={toggleTheme}>
-                    </Switch>
+                    <ListItemText>
+                        <Typography color={'text.secondary'}>
+                            Dark mode:
+                        </Typography>
+                    </ListItemText>
+                    <Switch checked={isDarkTheme} onChange={toggleTheme}/>
                 </ListItem>
             </List>
         </Drawer>

@@ -6,22 +6,18 @@ import Loading from "../../components/Loading/Loading";
 
 function HeroPage() {
     const { id } = useParams();
-
-    console.log(id);
     const{character, isLoading} = useCharacter(id);
-
-    console.log(character);
 
     if(!character) {
         return (
             <Typography variant="h3" component="div">
-                Page not found, try to choose another one
+                Page not found, try to choose another character
             </Typography>
         )
     }
 
     return (
-        <Grid container justifyContent="center" alignItems="center" style={{minHeight: '100vh'}}>
+        <Grid container justifyContent="center" alignItems="center" style={{minHeight: '95vh'}}>
             {isLoading && <Loading/>}
             <Grid >
                 <Card>
@@ -31,7 +27,7 @@ function HeroPage() {
                         sx={{ width: '500px' }}
                     />
                     <CardContent>
-                        <Typography variant="h4" component="div">
+                        <Typography variant="h4" component="div" color="text.secondary">
                             {character.name}
                         </Typography>
                         <Typography variant="body1" color="text.secondary">

@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
-import './characterList.css';
+import React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import {json} from "react-router-dom";
 
 function CharacterList({characterList, setCharacterId}) {
 
@@ -27,7 +25,7 @@ function CharacterList({characterList, setCharacterId}) {
     }
 
     return (
-        <Box sx={{ height: '90vh', width: '100%'}}>
+        <Box sx={{ height: '90vh', width: '100%', marginBottom: '10px'}}>
             <DataGrid
                 onRowClick={handleRowClick}
                 rows={characterList}
