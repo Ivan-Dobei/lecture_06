@@ -5,8 +5,6 @@ import Box from "@mui/material/Box";
 
 function Pagination({info, setUrl}) {
 
-    const nextBtnStyles = info.next ? 'next_button btn' : 'next_button btn disabled_btn';
-    const prevBtnStyles = info.prev ? 'previous_button btn' : 'previous_button btn disabled_btn';
     const pageNumber = info.next ? getPageNumberFromUrl(info.next) - 1 : info.pages;
 
     function nextBtnHandler() {
@@ -22,7 +20,6 @@ function Pagination({info, setUrl}) {
             <Button
                 variant="contained"
                 disabled={!info.prev}
-                className={prevBtnStyles}
                 onClick={prevBtnHandler}
                 sx={{marginRight: '10px'}}
             >Previous</Button>
@@ -33,7 +30,6 @@ function Pagination({info, setUrl}) {
                 variant="contained"
                 disabled={!info.next}
                 onClick={nextBtnHandler}
-                className={nextBtnStyles}
             >Next</Button>
         </Box>
     );
