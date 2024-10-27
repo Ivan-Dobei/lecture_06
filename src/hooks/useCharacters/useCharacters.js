@@ -27,7 +27,7 @@ function useCharacters(initialUrl) {
         fetchCharacters();
     }, [url]);
 
-    return { characters, info, isLoading, setUrl };
+    return {characters, info, isLoading, setUrl};
 }
 
 export default useCharacters;

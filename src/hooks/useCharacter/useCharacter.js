@@ -26,7 +26,7 @@ function useCharacter(characterId) {
         fetchCharacter();
     }, [characterId]);
 
-    return { character, isLoading };
+    return {character, isLoading};
 }
 
 export default useCharacter;

@@ -11,7 +11,7 @@ function MainPage() {
     const navigate = useNavigate();
 
     const heroItemHandler = (id) => {
-        navigate(`heroes/${id}`);
+        navigate(`/heroes/${id}`);
     }
 
     return (
