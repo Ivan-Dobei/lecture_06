@@ -1,5 +1,4 @@
 import React from 'react';
-import './pagination.css';
 import {getPageNumberFromUrl} from "../../utils/getNumberFromUrl";
 import {Button, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
@@ -25,6 +24,7 @@ function Pagination({info, setUrl}) {
                 disabled={!info.prev}
                 className={prevBtnStyles}
                 onClick={prevBtnHandler}
+                sx={{marginRight: '10px'}}
             >Previous</Button>
             <Typography className="count_of_pages text" variant="body2" sx={{marginRight: '10px'}}>
                 Pages: {pageNumber}
