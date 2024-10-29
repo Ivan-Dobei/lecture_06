@@ -1,10 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Loading from "../../components/Loading/Loading";
 import CharacterList from "../../components/CharacterList/CharacterList";
 import Pagination from "../../components/Pagination/Pagination";
 import useCharacters from "../../hooks/useCharacters/useCharacters";
 import {Outlet, useNavigate} from "react-router-dom";
-import {Card} from "@mui/material";
 import Box from "@mui/material/Box";
 
 function MainPage() {
@@ -19,7 +18,7 @@ function MainPage() {
     return (
         <Box sx={{marginLeft: '5px', display: 'flex'}}>
             <Box sx={{width:'100%'}}>
-                <Box>
+                <Box sx={{position: 'relative',}}>
                     {isLoading && <Loading/>}
                     <CharacterList
                         characterList={characters}
