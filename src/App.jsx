@@ -6,21 +6,25 @@ import AboutPage from "./layouts/AboutPage/AboutPage";
 import NavBar from "./components/NavBar/NavBar";
 import HeroPage from "./layouts/HeroPage/HeroPage";
 import Box from "@mui/material/Box";
+import ThemeBox from "./components/ThemeBox/ThemeBox";
+import './index.css';
 
 function App() {
 
     return (
-        <Box>
+        <ThemeBox>
             <NavBar/>
             <Box sx={{ height: '90vh', width: '80%', marginLeft: '20%'}}>
                 <Routes>
                     <Route path={'/'} element={<HomePage/>}/>
-                    <Route path={'/heroes'} element={<MainPage/>}/>
+                    <Route path={'/heroes'} element={<MainPage/>}>
+                        <Route path={':id'} element={<HeroPage/>}/>
+                    </Route>
                     <Route path={'/about'} element={<AboutPage/>}/>
-                    <Route path={'/heroes/:id'} element={<HeroPage/>}/>
+
                 </Routes>
             </Box>
-        </Box>
+        </ThemeBox>
     );
 }
 

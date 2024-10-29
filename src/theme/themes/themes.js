@@ -18,6 +18,13 @@ export const darkTheme = createTheme({
         },
     },
     components: {
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#000',
+                }
+            }
+        },
         MuiPaper: {
             styleOverrides: {
                 root: {
@@ -28,6 +35,9 @@ export const darkTheme = createTheme({
         MuiDataGrid: {
             styleOverrides: {
                 columnHeader: {
+                    color: '#fff',
+                },
+                root: {
                     color: '#fff',
                 },
             },

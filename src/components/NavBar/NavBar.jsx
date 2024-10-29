@@ -20,6 +20,7 @@ function Navbar() {
             sx={{
                 width: '20%',
                 position: 'fixed',
+                height: '100vh',
                 top: '60px',
                 [`& .MuiDrawer-paper`]: {width: '20%'},
             }}

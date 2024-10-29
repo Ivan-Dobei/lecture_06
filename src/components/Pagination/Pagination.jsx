@@ -16,14 +16,14 @@ function Pagination({info, setUrl}) {
     }
 
     return (
-        <Box display='flex' alignItems="center" justifyContent='center' sx={{width: '100%'}}>
+        <Box  sx={{width: '100%', display:'flex', alignItems:"center", justifyContent:'center'}}>
             <Button
                 variant="contained"
                 disabled={!info.prev}
                 onClick={prevBtnHandler}
                 sx={{marginRight: '10px'}}
             >Previous</Button>
-            <Typography className="count_of_pages text" variant="body2" sx={{marginRight: '10px'}}>
+            <Typography  color={'text.secondary'} variant="body2" sx={{marginRight: '10px'}}>
                 Pages: {pageNumber}
             </Typography>
             <Button

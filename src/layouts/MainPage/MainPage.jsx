@@ -3,7 +3,9 @@ import Loading from "../../components/Loading/Loading";
 import CharacterList from "../../components/CharacterList/CharacterList";
 import Pagination from "../../components/Pagination/Pagination";
 import useCharacters from "../../hooks/useCharacters/useCharacters";
-import {useNavigate} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
+import {Card} from "@mui/material";
+import Box from "@mui/material/Box";
 
 function MainPage() {
 
@@ -15,16 +17,19 @@ function MainPage() {
     }
 
     return (
-        <div>
-            <section className="container main_section">
-                {isLoading && <Loading/>}
-                <CharacterList
-                    characterList={characters}
-                    setCharacterId={heroItemHandler}
-                />
-            </section>
-            <Pagination info={info} setUrl={setUrl}/>
-        </div>
+        <Box sx={{marginLeft: '5px', display: 'flex'}}>
+            <Box sx={{width:'100%'}}>
+                <Box>
+                    {isLoading && <Loading/>}
+                    <CharacterList
+                        characterList={characters}
+                        setCharacterId={heroItemHandler}
+                    />
+                </Box>
+                <Pagination info={info} setUrl={setUrl}/>
+            </Box>
+            <Outlet/>
+        </Box>
     );
 }
 

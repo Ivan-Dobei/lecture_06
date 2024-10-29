@@ -1,5 +1,5 @@
 import React from 'react';
-import {Paper, Typography} from "@mui/material";
+import {Card, Paper, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 
 function AboutPage() {
@@ -11,7 +11,7 @@ function AboutPage() {
                 </Typography>
             </Paper>
 
-            <Typography variant='h4' textAlign='center'>
+            <Typography color={'text.secondary'} variant='h4' textAlign='center'>
                 In Progress...
             </Typography>
         </Box>

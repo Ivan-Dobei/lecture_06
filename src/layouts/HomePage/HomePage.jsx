@@ -11,7 +11,7 @@ function HomePage(props) {
                 </Typography>
             </Paper>
 
-            <Typography variant='h4' textAlign='center'>
+            <Typography color={'text.secondary'} variant='h4' textAlign='center'>
                 In Progress...
             </Typography>
         </Box>

@@ -3,7 +3,7 @@ import {Typography} from "@mui/material";
 
 function Loading() {
     return (
-        <Typography sx={{width: '100%', fontSize: '32px', textAlign: 'center'}}>
+        <Typography color={'text.secondary'} sx={{width: '100%', fontSize: '32px', textAlign: 'center'}}>
             Loading...
         </Typography>
     );
